@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+:root {
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-blue);
+  font-family: "Manrope", sans-serif;
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1em;
+}
+
+.container-2 {
+  max-width: 600px;
+  height: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-grayish-blue);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem 0 2rem;
+  border-radius: 10px;
+  span:nth-child(1) {
+    color: var(--neon-green);
+    padding-top: 2rem;
+    letter-spacing: 3px;
+  }
+  span:nth-child(2) {
+    color: var(--light-cyan);
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25b09b;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.image {
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  width: 100%;
+}
+
+.dice {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 2rem;
+  background-color: var(--neon-green);
+  border-radius: 50%;
+}
+
+.dice img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dice:hover {
+  box-shadow: 0 0 25px 5px var(--neon-green);
+}
+
+@media (min-width: 480px) {
+  .container {
+    width: 100%;
+    height: 100%;
+  }
+  .image {
+    width: 100%;
+  }
+}
